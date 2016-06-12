@@ -1,0 +1,14 @@
+
+
+Java has an API for working with databases, and this technology is known as JDBC. JDBC
+provides the developer with tools that allow clients to connect to databases and send commands
+to the database
+
+
+1) you need to load the Database driver before Java programs can connect to that database 
+    NOTE : You need to have a database specific jar before you connect 
+    
+2) WE are working with MYSQL Database so have mysql connector jar in your class path
+
+3) PreparedStatement objects are used to send SQL commands to the database. As you may recall
+ Statement objects are also used to send SQL commands to the database
