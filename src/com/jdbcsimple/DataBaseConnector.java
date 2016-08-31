@@ -16,7 +16,7 @@ public class DataBaseConnector {
 		/* First load the JDBC Driver */
 		 Class.forName("com.mysql.jdbc.Driver");
 
-    	conn=DriverManager.getConnection(connectionUrl,"root","password");
+    	conn=DriverManager.getConnection(connectionUrl,"root","junaid123");
     	//System.out.println(conn!=null);
     	return conn;
 	}

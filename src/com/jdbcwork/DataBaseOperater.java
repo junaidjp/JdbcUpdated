@@ -16,7 +16,7 @@ import com.bov.dto.UserExtended;
 import com.jdbcsimple.DataBaseConnector;
 
 public class DataBaseOperater {
-public 	static String dataBaseUrl = "jdbc:mysql://localhost:3306/bankofviz";
+public 	static String dataBaseUrl = "jdbc:mysql://localhost:3306/bankofdanish";
 	static Logger logger = Logger.getLogger("com.jdbcwork.DataBaseOperater");
 
 	public static List<Account> getAllAccounts() throws ClassNotFoundException,
@@ -201,6 +201,25 @@ else {
 		
 	}
 	
+	
+	
+	
+	public static void saveUserObject(User user) throws ClassNotFoundException, IOException, SQLException { 
+		
+		Connection conn = DataBaseConnector.getConnection(dataBaseUrl);
+		String sqlQuery =
+				  "insert into user (id,username,password) values(?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(sqlQuery);
+		ps.setInt(1,user.getId());
+		ps.setString(2, user.getUserName());// Set the Input Parameter
+		ps.setString(3, user.getPassword());// Set the second PArameter
+		ps.executeUpdate();
+		ps.close();
+		conn.close();
+		
+		
+		
+	}
 	
 	public static void deleteUser(String username) throws ClassNotFoundException, IOException, SQLException{
 		Connection conn = DataBaseConnector.getConnection(dataBaseUrl);
